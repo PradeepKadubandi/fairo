@@ -47,6 +47,9 @@ def get_center_of_larger_mask(seg, is_annot_validfn):
     # get center of x 
     return get_center(seg == lm), seg == lm
 
+def save_mask_pcd(pts, mask):
+    
+
 def get_target(traj_path, img_indx, is_annot_validfn, base_pos):
     src_depth = np.load(os.path.join(traj_path, "depth/{:05d}.npy".format(img_indx)))
     src_label = np.load(os.path.join(traj_path, "seg/{:05d}.npy".format(img_indx)))
