@@ -126,8 +126,12 @@ class RobotModelPinocchio(torch.nn.Module):
         """Computes the desired torques to achieve a certain joint acceleration from
         given joint positions and velocities.
 
+        Args:
+            joint_positions: Current joint positions
+            joint_velocities: Current joint velocities
+            joint_accelerations: Desired joint accelerations
         Returns:
-            torch.Tensor: desired torques
+            torch.Tensor: required torques
         """
         return self.model.inverse_dynamics(
             joint_positions, joint_velocities, joint_accelerations
