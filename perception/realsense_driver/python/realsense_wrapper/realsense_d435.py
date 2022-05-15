@@ -72,6 +72,10 @@ class RealsenseAPI:
 
         return rgbd
 
+    def stop(self):
+        for pipe in self.pipes:
+            pipe.stop()
+
 
 if __name__ == "__main__":
     cams = RealsenseAPI()
